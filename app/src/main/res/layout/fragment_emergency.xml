@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.emergency.EmergencyFragment">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            style="@style/SemiBold18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:text="@string/emergency_contact" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="105dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32dp"
+            android:contentDescription="@string/avatar_picture"
+            android:src="@drawable/placeholder_avatar"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            style="@style/Medium18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:text="@string/need_emergency_support" />
+
+        <TextView
+            style="@style/Regular14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/press_the_button_below" />
+
+        <ImageView
+            android:id="@+id/btn_call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@string/call_action"
+            android:src="@drawable/button_call"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/tv_emergency_name"
+            style="@style/SemiBoldGreen18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="18dp"
+            tools:text="Althaaf Ganteng" />
+
+        <TextView
+            android:id="@+id/tv_emergency_number"
+            style="@style/Regular14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            tools:text="+62858758214528" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_edit_emergency"
+            style="@style/MediumWhite16sp"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="52dp"
+            android:layout_marginEnd="34dp"
+            android:background="@drawable/bg_btn_green"
+            android:text="@string/edit_emergency_contact"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_about"
+            tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+    </LinearLayout>
+
+
+    <include
+        android:id="@+id/layoutSetEmergency"
+        layout="@layout/layout_set_emergency"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

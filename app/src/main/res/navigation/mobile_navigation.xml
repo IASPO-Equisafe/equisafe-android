@@ -9,17 +9,91 @@
         android:id="@+id/navigation_home"
         android:name="com.iaspo.equisafe.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
-
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_articleActivity"
+            app:destination="@id/articleActivity" />
+        <action
+            android:id="@+id/action_navigation_home_to_gamesActivity"
+            app:destination="@id/gamesActivity" />
+        <action
+            android:id="@+id/action_navigation_home_to_favoritesActivity"
+            app:destination="@id/favoritesActivity" />
+    </fragment>
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.iaspo.equisafe.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
-
+        android:id="@+id/navigation_emergency"
+        android:name="com.iaspo.equisafe.ui.emergency.EmergencyFragment"
+        android:label="fragment_emergency"
+        tools:layout="@layout/fragment_emergency" />
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.iaspo.equisafe.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_profile"
+        android:name="com.iaspo.equisafe.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navigation_profile_to_editProfileActivity"
+            app:destination="@id/editProfileActivity"
+            app:launchSingleTop="false"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_navigation_profile_to_changePasswordActivity"
+            app:destination="@id/changePasswordActivity" />
+        <action
+            android:id="@+id/action_navigation_profile_to_helpActivity"
+            app:destination="@id/helpActivity" />
+        <action
+            android:id="@+id/action_navigation_profile_to_aboutActivity"
+            app:destination="@id/aboutActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_learnings"
+        android:name="com.iaspo.equisafe.ui.learning.LearningFragment"
+        android:label="fragment_learning"
+        tools:layout="@layout/fragment_learning" />
+    <activity
+        android:id="@+id/editProfileActivity"
+        android:name="com.iaspo.equisafe.ui.profile.editprofile.EditProfileActivity"
+        android:label="activity_edit_profile"
+        tools:layout="@layout/activity_edit_profile" >
+        <!--suppress NavigationFile -->
+        <argument
+            android:name="accountData"
+            app:argType="com.iaspo.equisafe.core.domain.model.UserModel" />
+    </activity>
+    <activity
+        android:id="@+id/changePasswordActivity"
+        android:name="com.iaspo.equisafe.ui.profile.changepassword.ChangePasswordActivity"
+        android:label="activity_change_password"
+        tools:layout="@layout/activity_change_password" />
+    <activity
+        android:id="@+id/helpActivity"
+        android:name="com.iaspo.equisafe.ui.profile.help.HelpActivity"
+        android:label="activity_help"
+        tools:layout="@layout/activity_help" />
+    <activity
+        android:id="@+id/aboutActivity"
+        android:name="com.iaspo.equisafe.ui.profile.about.AboutActivity"
+        android:label="activity_about"
+        tools:layout="@layout/activity_about" />
+    <activity
+        android:id="@+id/articleActivity"
+        android:name="com.iaspo.equisafe.ui.home.article.ArticleActivity"
+        android:label="activity_article"
+        tools:layout="@layout/activity_article" />
+    <activity
+        android:id="@+id/mapsActivity"
+        android:name="com.iaspo.equisafe.ui.map.MapsActivity"
+        android:label="activity_maps"
+        tools:layout="@layout/activity_maps" />
+    <activity
+        android:id="@+id/gamesActivity"
+        android:name="com.iaspo.equisafe.ui.home.games.GamesActivity"
+        android:label="activity_games"
+        tools:layout="@layout/activity_games" />
+    <activity
+        android:id="@+id/favoritesActivity"
+        android:name="com.iaspo.equisafe.ui.home.favorites.FavoritesActivity"
+        android:label="activity_favorites"
+        tools:layout="@layout/activity_favorites" />
+
 </navigation>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frame_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_game_chronical"
+    tools:context=".ui.home.games.chronicles.GamesChroniclesActivity">
+
+    <FrameLayout
+        android:id="@+id/frame_container"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent"/>
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarDetail"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#00000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:contentDescription="@string/button_back"
+                android:src="@drawable/icon_back_green"
+                app:tint="@color/white" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginBottom="32dp"
+                android:contentDescription="@string/games_crisis_chronicles"
+                android:src="@drawable/title_games_chronical" />
+
+            <TextView
+                style="@style/SemiBoldWhite16sp"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/description_game_chronicles"
+                android:textAlignment="center"
+                tools:ignore="TextSizeCheck" />
+
+            <ImageView
+                android:id="@+id/btn_play_chronical"
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="120dp"
+                android:contentDescription="@string/button_play_game"
+                android:src="@drawable/btn_games_chronical" />
+
+        </LinearLayout>
+</FrameLayout>

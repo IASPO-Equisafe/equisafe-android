@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="4dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="4dp"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="16dp"
+    android:layout_gravity="center">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/img_article"
+            android:layout_width="85dp"
+            android:layout_height="94dp"
+            android:contentDescription="@string/image_article"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ImageContrastCheck"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textView3"
+            style="@style/Light6spGray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            app:layout_constraintStart_toEndOf="@id/img_article"
+            app:layout_constraintTop_toTopOf="@+id/img_article"
+            tools:ignore="TextContrastCheck"
+            tools:text="03 Agustus 2023" />
+
+        <TextView
+            android:id="@+id/title_article"
+            style="@style/BoldGreen12sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            tools:ignore="TextContrastCheck"
+            tools:text="5 Worst Earthquakes in History: Shattering the Ground Beneath Us" />
+
+        <TextView
+            android:id="@+id/description_article"
+            style="@style/Light8sp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:maxLines="4"
+            android:ellipsize="end"
+            android:layout_marginTop="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_article"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/title_article"
+            app:layout_constraintTop_toBottomOf="@+id/title_article"
+            tools:text="Dive into the annals of oceanic fury as we recount ten of the deadliest tsunamis, revealing their origins, the destruction they wrought, and the global efforts to safeguard coastal populations."
+            tools:ignore="VisualLintLongText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

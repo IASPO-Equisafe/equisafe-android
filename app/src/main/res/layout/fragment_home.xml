@@ -1,22 +1,239 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="wrap_content">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieLoadingGreeting"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/greeting"
+            app:layout_constraintStart_toStartOf="@id/greeting"
+            app:layout_constraintTop_toTopOf="@+id/greeting"
+            app:layout_constraintBottom_toBottomOf="@id/greeting"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading_anim"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/greeting"
+            style="@style/SemiBold18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Welcome, Althaafff!" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="0dp"
+            android:layout_height="115dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/banner_empowering_difabel_with_disaster_resilience_through_inclusive_learning"
+            android:src="@drawable/card_home"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/greeting"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/feature"
+            style="@style/Medium16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="18dp"
+            android:text="@string/features"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <ImageButton
+            android:id="@+id/btn_favorite"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_btn_store"
+            android:contentDescription="@string/favorite_page"
+            android:src="@drawable/icon_favorite_large"
+            app:layout_constraintStart_toStartOf="@+id/feature"
+            app:layout_constraintTop_toBottomOf="@+id/feature"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/Regular12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/favorite"
+            app:layout_constraintEnd_toEndOf="@+id/btn_favorite"
+            app:layout_constraintStart_toStartOf="@+id/btn_favorite"
+            app:layout_constraintTop_toBottomOf="@+id/btn_favorite" />
+
+        <ImageButton
+            android:id="@+id/btn_games"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_btn_games"
+            android:contentDescription="@string/games_page"
+            android:src="@drawable/icon_game"
+            app:layout_constraintEnd_toStartOf="@+id/btn_articles"
+            app:layout_constraintStart_toEndOf="@+id/btn_favorite"
+            app:layout_constraintTop_toBottomOf="@+id/feature"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/Regular12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/games"
+            app:layout_constraintEnd_toEndOf="@+id/btn_games"
+            app:layout_constraintStart_toStartOf="@+id/btn_games"
+            app:layout_constraintTop_toBottomOf="@+id/btn_favorite" />
+
+        <ImageButton
+            android:id="@+id/btn_articles"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/bg_btn_article"
+            android:src="@drawable/icon_article"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/article_page"
+            app:layout_constraintTop_toBottomOf="@+id/feature" />
+
+        <TextView
+            style="@style/Regular12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/articles"
+            app:layout_constraintEnd_toEndOf="@+id/btn_articles"
+            app:layout_constraintStart_toStartOf="@+id/btn_articles"
+            app:layout_constraintTop_toBottomOf="@+id/btn_favorite" />
+
+        <TextView
+            android:id="@+id/tips"
+            style="@style/Medium16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/did_you_know"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <RelativeLayout
+            android:id="@+id/bannerLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tips">
+
+            <com.zhpan.bannerview.BannerViewPager
+                android:id="@+id/banner_view"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                app:bvp_indicator_gravity="end"
+                app:bvp_indicator_radius="12dp"
+                app:bvp_round_corner="16dp" />
+
+            <com.zhpan.indicator.IndicatorView
+                android:id="@+id/indicator_view"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="12dp"
+                android:layout_below="@id/banner_view"
+
+                android:layout_alignEnd="@id/banner_view"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_divider"
+            android:backgroundTint="#D9D9D9"
+            android:contentDescription="@string/divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bannerLayout"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/last_played"
+            style="@style/Medium16sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="26dp"
+            android:text="@string/last_played"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_lp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="100dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/last_played"
+            app:layout_constraintStart_toStartOf="@+id/last_played"
+            app:layout_constraintTop_toBottomOf="@id/last_played">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/img_material"
+                android:layout_width="match_parent"
+                android:layout_height="145dp"
+                android:scaleType="fitXY"
+                app:shapeAppearanceOverlay="@style/RoundedSquare8dp"
+                tools:ignore="ImageContrastCheck" />
+
+        </androidx.cardview.widget.CardView>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieLoadingCard"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/card_lp"
+            app:layout_constraintEnd_toEndOf="@+id/card_lp"
+            app:layout_constraintStart_toStartOf="@id/card_lp"
+            app:layout_constraintTop_toTopOf="@+id/card_lp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading_anim"
+            tools:ignore="ImageContrastCheck"
+            tools:visibility="visible" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

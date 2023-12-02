@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.games.chronicles.QuestionThreeFragment">
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarDetail"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/progress_bar_background"
+                android:indeterminate="false"
+                android:max="100"
+                android:progress="60"
+                android:progressDrawable="@drawable/curved_progress_bar" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/question_three_chronicles"
+            style="@style/TitanOne20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="56dp"
+            android:textAlignment="center"
+            tools:text="What kinds of events, caused by nature, can be very powerful and harmful?" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/image_equisafe_mascot"
+                android:src="@drawable/char4_chronicles" />
+
+            <ImageButton
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="32dp"
+                android:background="@drawable/bg_volume_up"
+                android:contentDescription="@string/volume_up"
+                android:src="@drawable/volumeup_large"
+                tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/TitanOnePurple20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="46dp"
+            android:text="@string/your_answer" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ed_answer_three"
+            style="@style/CustomOutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:focusable="true"
+            app:boxStrokeColor="@color/colorTextBlue"
+            app:hintAnimationEnabled="false"
+            app:hintEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_answer_three"
+                style="@style/Regular12sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="32dp"
+                android:hint="@string/answer_here"
+                tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/bg_divider"
+            android:backgroundTint="@color/colorTextBlue2"
+            android:contentDescription="@string/divider"
+            tools:ignore="ImageContrastCheck" />
+
+        <ImageView
+            android:id="@+id/btn_check_question_three"
+            android:layout_width="180dp"
+            android:layout_height="76dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:contentDescription="@string/check_answer"
+            android:src="@drawable/btn_check_chroncles"
+            tools:ignore="ImageContrastCheck" />
+
+        <LinearLayout
+            android:id="@+id/layout_correct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_condiiton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/correct_answer"
+                android:src="@drawable/icon_circle_blue" />
+
+            <TextView
+                android:id="@+id/tv_condition"
+                style="@style/BoldBlue22sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="12dp"
+                android:text="@string/good_job" />
+
+            <ImageView
+                android:id="@+id/btn_next_question_three"
+                android:layout_width="180dp"
+                android:layout_height="76dp"
+                android:layout_marginStart="12dp"
+                android:src="@drawable/btn_next_chornicles"
+                android:contentDescription="@string/next_question" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/bg_perfect"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:visibility="gone"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_perfect"
+        style="@style/TitanOneGold35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:alpha="0"
+        android:text="@string/perfect"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.article.DetailArticleActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarDetail"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/SemiBold18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/detail_article" />
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:contentDescription="@string/button_back"
+                android:src="@drawable/icon_back_green" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/tv_detail_title_article"
+            style="@style/BoldGreen14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="28dp"
+            android:textAlignment="center"
+            tools:text="5 Worst Earthquakes in History: Shattering the Ground Beneath Us" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_detail_article"
+            android:layout_width="210dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:scaleType="fitXY"
+            app:shapeAppearance="@style/RoundedSquare16dp"
+            tools:ignore="ImageContrastCheck"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/date_detail_article"
+            style="@style/BoldGray10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="17dp"
+            android:textAlignment="center"
+            tools:ignore="TextContrastCheck"
+            tools:text="08 Agustus 2023" />
+
+        <TextView
+            android:id="@+id/desc_detail_article"
+            style="@style/Regular10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="17dp"
+            tools:text="1. Valdivia, Chile - 1960: The Megaquak In 1960, a huge earthquake hit Valdivia, Chile. It was the strongest ever, shaking everything and causing giant waves that traveled far across the ocean. 2. Shaanxi, China - 1556: China's Big Quake A really big earthquake happened in China in 1556. The ground cracked open, and many places got buried under the rubble, making it one of the deadliest earthquakes ever. 3. Indian Ocean - 2004: Giant Waves A big shake underwater made gigantic waves in 2004. These waves, called a tsunami, crashed into many countries along the Indian Ocean, causing lots of sadness. 4. Tangshan, China - 1976: China's Big Shake China felt a very strong earthquake in 1976. Many buildings fell down, and sadly, lots of people lost their lives. 5. Haiti - 2010: Haiti's Big Shake Haiti had a big earthquake in 2010. It knocked down homes, hospitals, and schools, and many people were hurt. These big earthquakes show us how powerful our planet can be. They remind us to be prepared and to help each other when nature gets really strong."
+            tools:ignore="VisualLintLongText" />
+
+        <TextView
+            style="@style/SemiBold18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="@string/reading_more"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading_anim"
+            tools:visibility="visible" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_article"
+            app:cardElevation="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="122dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="18dp"
+            android:layout_marginHorizontal="30dp"
+            app:cardCornerRadius="16dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp">
+
+                <ImageView
+                    android:id="@+id/card_img_article"
+                    android:layout_width="85dp"
+                    android:layout_height="94dp"
+                    android:scaleType="fitXY"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/image_article_reading_more"
+                    tools:src="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/card_date_article"
+                    style="@style/Light6spGray"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    app:layout_constraintStart_toEndOf="@id/card_img_article"
+                    app:layout_constraintTop_toTopOf="@+id/card_img_article"
+                    tools:ignore="TextContrastCheck"
+                    tools:text="03 Agustus 2023" />
+
+                <TextView
+                    android:id="@+id/card_title_article"
+                    style="@style/BoldGreen12sp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#2E7D32"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/card_date_article"
+                    app:layout_constraintTop_toBottomOf="@+id/card_date_article"
+                    tools:text="5 Worst Earthquakes in History: Shattering the Ground Beneath Us" />
+
+                <TextView
+                    android:id="@+id/card_description_article"
+                    style="@style/Light8sp"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:maxLines="4"
+                    android:ellipsize="end"
+                    android:layout_marginTop="2dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/card_img_article"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/card_title_article"
+                    app:layout_constraintTop_toBottomOf="@+id/card_title_article"
+                    tools:text="Dive into the annals of oceanic fury as we recount ten of the deadliest tsunamis, revealing their origins, the destruction they wrought, and the global efforts to safeguard coastal populations."
+                    tools:ignore="VisualLintLongText" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

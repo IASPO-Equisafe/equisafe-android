@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.home.games.GamesActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarDetail"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/SemiBold18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/games" />
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:contentDescription="@string/button_back"
+            android:src="@drawable/icon_back_green" />
+    </androidx.appcompat.widget.Toolbar>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_material"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/bannergames2"
+            android:scaleType="fitXY" />
+
+    <TextView
+        style="@style/SemiBold18sp"
+        android:id="@+id/tv_suggestion"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="18dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/suggested_for_you"/>
+
+    <include
+        android:id="@+id/card_game_1"
+        layout="@layout/item_card_game"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginHorizontal="32dp"
+       />
+
+    <include
+        android:id="@+id/card_game_2"
+        layout="@layout/item_card_game"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginHorizontal="32dp"
+       />
+</LinearLayout>

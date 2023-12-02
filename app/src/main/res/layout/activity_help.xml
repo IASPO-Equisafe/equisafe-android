@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.help.HelpActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarDetail"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/bg_toolbar_green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/SemiBoldWhite16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/help_center" />
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:contentDescription="@string/button_back"
+            android:src="@drawable/icon_back" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/iv_help"
+        android:layout_width="0dp"
+        android:layout_height="230dp"
+        android:layout_marginTop="14dp"
+        android:src="@drawable/help_center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ContentDescription"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarDetail" />
+
+    <TextView
+        android:id="@+id/tv_contact"
+        style="@style/SemiBoldGreen18sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/contact_us"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_help" />
+
+    <TextView
+        android:id="@+id/tv_desc"
+        style="@style/Regular14sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/we_are_ready_to_help_anytime_and_anywhere_please_contact_us_via"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_contact" />
+
+    <ImageView
+        android:id="@+id/iv_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:src="@drawable/icon_call"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayoutCall"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ContentDescription"
+        app:layout_constraintTop_toTopOf="@+id/linearLayoutCall" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutCall"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_call"
+        app:layout_constraintTop_toBottomOf="@+id/tv_desc">
+
+        <TextView
+            style="@style/MediumColorTextGrey12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-16dp"
+            android:text="@string/call"
+            tools:ignore="TextContrastCheck,VisualLintOverlap" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_help_call"
+            style="@style/Medium12sp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_button_profile_active"
+            android:drawableEnd="@drawable/icon_next_green"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:contentDescription="@string/button_help_call"
+            android:textColor="@drawable/text_color_profile"
+            tools:ignore="VisualLintButtonSize" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_sms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:src="@drawable/icon_message"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayoutSms"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ContentDescription"
+        app:layout_constraintTop_toTopOf="@+id/linearLayoutSms" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutSms"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_sms"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCall">
+
+        <TextView
+            style="@style/MediumColorTextGrey12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-16dp"
+            android:text="@string/sms"
+            tools:ignore="TextContrastCheck,VisualLintOverlap" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_help_sms"
+            style="@style/Medium12sp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_button_profile_active"
+            android:drawableEnd="@drawable/icon_next_green"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:contentDescription="@string/sms_help"
+            android:textColor="@drawable/text_color_profile"
+            tools:ignore="VisualLintButtonSize" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:src="@drawable/icon_email"
+        tools:ignore="ContentDescription"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayoutEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayoutEmail" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_email"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutSms">
+
+        <TextView
+            style="@style/MediumColorTextGrey12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-16dp"
+            android:text="@string/email"
+            tools:ignore="TextContrastCheck,VisualLintOverlap" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_help_email"
+            style="@style/Medium12sp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_button_profile_active"
+            android:drawableEnd="@drawable/icon_next_green"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:contentDescription="@string/email_help"
+            android:textColor="@drawable/text_color_profile"
+            tools:ignore="VisualLintButtonSize" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_wa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:src="@drawable/icon_wa"
+        tools:ignore="ContentDescription"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayoutWa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayoutWa" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutWa"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_wa"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutEmail">
+
+        <TextView
+            style="@style/MediumColorTextGrey12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-16dp"
+            android:text="@string/whatsapp"
+            tools:ignore="TextContrastCheck,VisualLintOverlap" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_help_wa"
+            style="@style/Medium12sp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_button_profile_active"
+            android:drawableEnd="@drawable/icon_next_green"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:contentDescription="@string/whatsapp_help"
+            android:textColor="@drawable/text_color_profile"
+            tools:ignore="VisualLintButtonSize" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

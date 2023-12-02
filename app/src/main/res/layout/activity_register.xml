@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.auth.register.RegisterActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="115dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/logo2"
+            android:contentDescription="@string/logo_equisafe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/SemiBold18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/create_account"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            tools:ignore="VisualLintOverlap" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@id/emergency_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/bg_emergency_card"
+            android:visibility="gone"
+            android:layout_marginTop="12dp"
+            android:padding="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/address_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="center"
+                android:tint="@color/colorTextGray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/baseline_notifications_none_24"
+                tools:ignore="ImageContrastCheck" />
+
+            <TextView
+                android:id="@+id/emergency_label"
+                style="@style/Medium14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:text="@string/emergency"
+                app:layout_constraintBottom_toBottomOf="@id/address_icon"
+                app:layout_constraintStart_toEndOf="@id/address_icon"
+                app:layout_constraintTop_toTopOf="@id/address_icon"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/emergency_name_value"
+                style="@style/Regular12sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="6dp"
+                android:text="@{viewModel.obaProfile}"
+                app:layout_constraintEnd_toStartOf="@+id/btnChangeEmergency"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/emergency_label"
+                tools:ignore="TextContrastCheck"
+                tools:text="Kelana Chandra Helyandika" />
+
+            <TextView
+                android:id="@+id/emergency_number_value"
+                style="@style/Regular12sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="6dp"
+                android:text="@{viewModel.obaProfile}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/emergency_name_value"
+                tools:ignore="TextContrastCheck"
+                tools:text="+6285875814528" />
+
+            <TextView
+                android:id="@+id/btnChangeEmergency"
+                style="@style/CustomButton.LightGreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:elevation="@dimen/cardview_default_elevation"
+                android:minHeight="48dp"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="4dp"
+                android:text="@string/change"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/emergency_name_value"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TextContrastCheck,VisualLintOverlap" />
+
+            <View
+                android:id="@+id/view_btn_change"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:elevation="3dp"
+                android:focusable="true"
+                android:contentDescription="@string/area_change_emergency"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/btnChangeEmergency"
+                app:layout_constraintStart_toStartOf="@id/btnChangeEmergency"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ed_register_name"
+            style="@style/CustomOutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="34dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="16dp"
+            android:hint="@string/fullname"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emergency_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_register_fullname"
+                style="@style/Regular12sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ed_register_username"
+            style="@style/CustomOutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="34dp"
+            android:layout_marginTop="16dp"
+            android:hint="@string/username"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ed_register_name"
+            app:layout_constraintTop_toBottomOf="@+id/ed_register_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_register_username"
+                style="@style/Regular12sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ed_register_password"
+            style="@style/CustomOutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="34dp"
+            android:layout_marginTop="16dp"
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+            android:hint="@string/password"
+            app:helperText="Use at least one capital letter"
+            app:endIconMode="password_toggle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ed_register_username"
+            app:layout_constraintTop_toBottomOf="@+id/ed_register_username">
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/Regular12sp"
+                android:id="@+id/input_register_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPassword"
+                app:passwordToggleEnabled="true"
+                tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ed_register_confirm_password"
+            style="@style/CustomOutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="34dp"
+            android:layout_marginTop="16dp"
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+            android:hint="@string/confirmation_password"
+            app:endIconMode="password_toggle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ed_register_password"
+            app:layout_constraintTop_toBottomOf="@+id/ed_register_password">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_register_confirm_password"
+                style="@style/Regular12sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPassword"
+                app:passwordToggleEnabled="true"
+                tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/ed_register_confirm_password">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_add_emergency"
+                style="@style/MediumWhite16sp"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="94dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="94dp"
+                android:background="@drawable/bg_btn_green"
+                android:text="@string/set_emergency"
+                android:textAllCaps="false"
+                tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_register"
+                style="@style/MediumWhite16sp"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginStart="34dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="34dp"
+                android:background="@drawable/bg_btn_green"
+                android:enabled="false"
+                android:text="@string/sign_up"
+                android:textAllCaps="false"
+                tools:ignore="VisualLintButtonSize" />
+
+            <TextView
+                android:id="@+id/tv_signup"
+                style="@style/Medium12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/already_have_account_sign_in" />
+        </LinearLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ed_register_confirm_password"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading_anim"/>
+
+        <include
+            android:id="@+id/layoutSetEmergency"
+            layout="@layout/layout_set_emergency"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>
